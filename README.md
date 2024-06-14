@@ -1,5 +1,5 @@
 # Microservices-Sample-using-SpringBoot-SpringCloud-Eureka-and-Zuul
-Spring Cloud project shows how to create simple microservices with Spring Boot, Spring Cloud, Eureka (Discovery Server) and Zuul (API gateway, Proxy, Load balancer)
+Spring Cloud project shows how to create simple microservices with Spring Boot, Spring Cloud, Eureka (Discovery Server) and Spring Cloud Gateway (API gateway, Proxy, Load balancer)
 
 ## Table of contents
 * [Architecture](#architecture)
@@ -22,9 +22,9 @@ This project is created using the following technologies:
 1. Java 8
 2. Spring Boot in cloud-native development:
 	
-	+ **Spring Cloud Netflix Eureka** – Registration and Discovery service for all microservices
-	+ **Spring Cloud Netflix Zuul** – API Gateway service that provides dynamic routing, and load balancer
-	+ **Spring Cloud Netflix Feign** – Declarative REST client
+	+ **Spring Cloud Netflix Eureka** â€“ Registration and Discovery service for all microservices
+	+ **Spring Cloud Gateway** â€“ API Gateway service that provides dynamic routing, and load balancer
+	+ **Spring Cloud Netflix Feign** â€“ Declarative REST client
 	
 3. Spring Boot in microservices development:
 	
@@ -32,7 +32,7 @@ This project is created using the following technologies:
 	+ Spring Data JPA
 	+ Spring Devtools
 	+ Spring Actuator
-	+ H2 In-Memory database
+	+ MySQL Database
 
 4. Maven Dependency Management
 
@@ -42,8 +42,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 You need to install the following software:
- * Java JDK 1.8+
- * Maven 3.0+
+ * Java JDK 17+
+ * Maven
 
 ### Developing Steps
 The steps to be taken in order to create working microservices-based system using Spring Cloud:
@@ -52,11 +52,11 @@ The steps to be taken in order to create working microservices-based system usin
  
 **Step 2.** Building the microservices using Spring Boot, Spring Cloud and communication between them with Spring Cloud Open Feign:
 
- + User microservice
- + Site microservice
- + Organization microservice
+ + Product microservice
+ + Order microservice
 
-**Step 3.** Creating API gateway using Spring Cloud Netflix Zuul
+
+**Step 3.** Creating API gateway using Spring Cloud Gateway
 
 **Step 4.** Running and testing applications
  
@@ -173,9 +173,9 @@ To run this project, install it locally as follow:
 
 	You can run more instances of the microservices (User, Site, Organization):
 	
-	* Using eclipse just edit run command of your application (Run configurations…) and add VM parameter `-DPORT=…` or `-Dserver.port=…`.
+	* Using eclipse just edit run command of your application (Run configurationsâ€¦) and add VM parameter `-DPORT=â€¦` or `-Dserver.port=â€¦`.
 	
-	* Or using the `-Dserver.port=…` argument with the command: `java -jar target/service_name.jar -Dserver.port=…`
+	* Or using the `-Dserver.port=â€¦` argument with the command: `java -jar target/service_name.jar -Dserver.port=â€¦`
 
 	```bash
 	java -jar target/service_name-0.0.1-SNAPSHOT.jar -Dserver.port=8085
@@ -193,7 +193,7 @@ To access the applications use the following endpoints
 	
 	![Eureka Discovery Dashboard](EurekaDashboard.png)
 	
-	Now take a look on Eureka monitoring console: We’ve got one instance of Site and Organization microservices running on default ports (8082, 8083) and two instances of user microservice on (8081, 8085) ports registered on discovery server. 
+	Now take a look on Eureka monitoring console: Weâ€™ve got one instance of Site and Organization microservices running on default ports (8082, 8083) and two instances of user microservice on (8081, 8085) ports registered on discovery server. 
 
 * **API Gateway and Microservices**
 		
