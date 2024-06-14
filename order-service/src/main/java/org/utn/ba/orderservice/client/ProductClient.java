@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.utn.ba.orderservice.models.Product;
 
-@FeignClient(name = "product-service")
+@FeignClient(name = "product-service", url = "http://localhost:9811")
 public interface ProductClient {
 
     @GetMapping("/products/{id}")

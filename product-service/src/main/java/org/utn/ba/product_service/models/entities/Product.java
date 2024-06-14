@@ -1,9 +1,13 @@
 package org.utn.ba.product_service.models.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Table
 @Entity
+@Getter
+@Setter
 public class Product {
 
         @Id
@@ -11,7 +15,7 @@ public class Product {
         private Long id;
 
         @Column
-        private String nombre;
+        private String name;
 }
 
 
