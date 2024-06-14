@@ -1,4 +1,4 @@
-# Microservices-Sample-using-SpringBoot-SpringCloud-Eureka-and-Zuul
+# Microservices-Sample-using-SpringBoot-SpringCloud-Eureka-and-Spring-Cloud-Gateway
 Spring Cloud project shows how to create simple microservices with Spring Boot, Spring Cloud, Eureka (Discovery Server) and Spring Cloud Gateway (API gateway, Proxy, Load balancer)
 
 ## Table of contents
