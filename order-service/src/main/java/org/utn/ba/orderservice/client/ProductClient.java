@@ -17,13 +17,3 @@ public interface ProductClient {
 
 }
 
-@Component
-class ProductClientFallBack implements ProductClient{
-    @Override
-    public Product getProductById(Long id) {
-        Product productFallBack = new Product();
-        productFallBack.setId(id);
-        productFallBack.setName("Fallback Response: No se pudo obtener el detalle del Producto ID: " + id);
-        return productFallBack;
-    }
-}
