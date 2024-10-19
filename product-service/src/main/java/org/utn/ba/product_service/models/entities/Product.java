@@ -1,13 +1,18 @@
 package org.utn.ba.product_service.models.entities;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.math.BigDecimal;
 
 @Table
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class Product {
 
         @Id
@@ -16,6 +21,11 @@ public class Product {
 
         @Column
         private String name;
+
+        @Column
+        private Float price;
+
+
 }
 
 
